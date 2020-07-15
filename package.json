@@ -1,0 +1,16 @@
+{
+  "name": "switchui",
+  "version": "1.0.0",
+  "description": "clone switch ui",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "frontend",
+    "switch"
+  ],
+  "author": "iqbaladinur",
+  "license": "ISC",
+  "devDependencies": {}
+}
