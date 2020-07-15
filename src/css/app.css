@@ -1,0 +1,57 @@
+body{
+  margin: 0px;
+}
+.container{
+  display: grid;
+  grid-template-rows: 15% 50% 20% 15%;
+  height: 100vh;
+}
+.helper{
+  border: 1px solid gray;
+}
+.status-bar{
+  display: grid;
+  grid-template-columns: 10% 30%;
+  grid-column-gap: 60%;
+}
+.status-bar > .profile{
+  margin: auto;
+  position: relative;
+}
+.status-bar > .profile > img{
+  width: 60px;
+  height: 60px;
+  background: blue;
+  border: none;
+  border-radius: 60px;
+}
+.status-bar > .profile > .user{
+  margin: 0px;
+  position: absolute;
+}
+.status-bar > .app-indicator {
+  margin-right: 50px;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  justify-items: center;
+  align-items: center;
+}
+.game-list{
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(100, 300px);
+  overflow-x: auto;
+  grid-gap: 10px;
+  padding-left: 130px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.game-list::-webkit-scrollbar {
+  display: none;
+}
+.game-list > .game{
+  height: 300px;
+}
+.game-list > .closing{
+  width: 130px;
+}
