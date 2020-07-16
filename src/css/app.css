@@ -4,24 +4,28 @@
   --shadow: 0 0 5px rgba(0, 0, 0, .05);
   --focus-light: #3FE9D3;
   --focus-dark: #04B9C3;
+  --dark-black: #2A2C29;
 }
 .basic-white{
   background: white;
-  color: #2A2C29;
-  fill: #2A2C29;
+  color: var(--dark-black);
+  fill: var(--dark-black);
 }
 .basic-black{
-  background: #2A2C29;
+  background: var(--dark-black);
   color: white;
   fill: white;
 }
 .basic-white .button-information {
-  background: #2A2C29;
+  background: var(--dark-black);
   color: white
 }
 .basic-black .button-information {
   background: white;
-  color: #2A2C29;
+  color: var(--dark-black);
+}
+.basic-black .mode{
+  filter: invert();
 }
 body{
   margin: 0px;
@@ -37,8 +41,7 @@ body{
 }
 .status-bar{
   display: grid;
-  grid-template-columns: 20% 30%;
-  grid-column-gap: 50%;
+  grid-template-columns: 50% 50%;
 }
 .status-bar > .profile{
   margin: auto auto auto var(--statusbar-margin);
@@ -105,8 +108,32 @@ body{
 }
 .game-list > .game{
   height: 300px;
+  background: rgba(255, 255, 255, 0.068);
+  position: relative;
+}
+.game > a > .game-title{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -30px;
+  font-weight: bold;
+  color: var(--focus-dark);
+  text-transform: capitalize;
+  font-size: 15pt;
+  width: 100%;
+  display: none;
+}
+.game > a > img {
+  border: 2px solid rgba(0, 0, 0, 0.041);
+}
+.game > a:focus > img, .game > a:hover > img{
+  animation: focus 1s infinite;
+}
+.game > a:focus > .game-title, .game > a:hover > .game-title {
+  display: block;
 }
 .game-list > .closing{
+  height: 300px;
   width: 130px;
 }
 .menu-container {
@@ -133,7 +160,7 @@ body{
   position: absolute;
   bottom: 0;
   left: 0;
-  margin-bottom: -30px;
+  margin-bottom: -35px;
   text-align: center;
   font-weight: bold;
   color: var(--focus-dark);
@@ -151,12 +178,11 @@ body{
 }
 .footer{
   display: grid;
-  grid-template-columns: 10% 30%;
-  grid-column-gap: 60%;
+  grid-template-columns: 50% 50%;
   height: 85%;
 }
 .footer > .status-mode{
-  margin: auto;
+  margin: auto auto auto 50px;
   width: 100px;
   height: 60px;
   display: flex;
