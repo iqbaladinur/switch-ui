@@ -1,5 +1,31 @@
+:root{
+  --profile-size: 4rem;
+  --statusbar-margin: 3rem;
+  --shadow: 0 0 5px rgba(0, 0, 0, .05);
+  --focus-light: #3FE9D3;
+  --focus-dark: #04B9C3;
+}
+.basic-white{
+  background: white;
+  color: #2A2C29;
+  fill: #2A2C29;
+}
+.basic-black{
+  background: #2A2C29;
+  color: white;
+  fill: white;
+}
+.basic-white .button-information {
+  background: #2A2C29;
+  color: white
+}
+.basic-black .button-information {
+  background: white;
+  color: #2A2C29;
+}
 body{
   margin: 0px;
+  font-family: 'Oxygen', sans-serif;
 }
 .container{
   display: grid;
@@ -11,30 +37,58 @@ body{
 }
 .status-bar{
   display: grid;
-  grid-template-columns: 10% 30%;
-  grid-column-gap: 60%;
+  grid-template-columns: 20% 30%;
+  grid-column-gap: 50%;
 }
 .status-bar > .profile{
-  margin: auto;
+  margin: auto auto auto var(--statusbar-margin);
   position: relative;
 }
-.status-bar > .profile > img{
-  width: 60px;
-  height: 60px;
-  background: blue;
-  border: none;
-  border-radius: 60px;
+.status-bar > .profile > a > img{
+  width: var(--profile-size);
+  height: var(--profile-size);
+  border: 2px solid rgba(128, 128, 128, 0.411);
+  border-radius: var(--profile-size);
+  cursor: pointer;
+}
+.status-bar > .profile > a:hover > img, .status-bar > .profile > a:focus > img {
+  animation: focus 1s infinite;
+}
+.status-bar > .profile > a:hover + .user, .status-bar > .profile > a:focus + .user{
+  display: block;
 }
 .status-bar > .profile > .user{
+  padding-top: 5px;
   margin: 0px;
   position: absolute;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: var(--focus-dark);
+  display: none;
 }
 .status-bar > .app-indicator {
-  margin-right: 50px;
+  margin-right: var(--statusbar-margin);
+  display: flex;
+}
+#clock{
+  margin: 0px 10px 0px 10px;
+}
+.status-bar > .app-indicator > .app-container{
+  display: flex;
+  margin: auto 0px auto auto;
+  font-size: 25pt;
+}
+.status-bar > .app-indicator > .app-container > .battery{
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  min-width: 130px;
+  grid-template-columns: 50% 50%;
   justify-items: center;
   align-items: center;
+}
+.status-bar > .app-indicator > .app-container > .wifi{
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .game-list{
   display: grid;
@@ -54,4 +108,89 @@ body{
 }
 .game-list > .closing{
   width: 130px;
+}
+.menu-container {
+  display: flex;
+}
+.menu{
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 20px;
+
+}
+.menu > .item {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.068);
+  border: 2px solid rgba(128, 128, 128, 0.247);
+  border-radius: 100px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+.menu > .item > .desc{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: -30px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--focus-dark);
+  text-transform: capitalize;
+  font-size: 15pt;
+  width: 100%;
+  display: none;
+}
+.menu > .item:focus, .menu > .item:hover {
+  outline: none;
+  animation: focus 1s infinite;
+}
+.menu > .item:focus > .desc, .menu > .item:hover > .desc{
+  display: block;
+}
+.footer{
+  display: grid;
+  grid-template-columns: 10% 30%;
+  grid-column-gap: 60%;
+  height: 85%;
+}
+.footer > .status-mode{
+  margin: auto;
+  width: 100px;
+  height: 60px;
+  display: flex;
+}
+.footer > .information{
+  margin-right: var(--statusbar-margin);
+  display: grid;
+  justify-items: end;
+  align-items: center;
+}
+.button-information{
+  box-shadow: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.button-information:focus{
+  outline: none;
+}
+.button-information:first-of-type + span{
+  margin-right: 30px;
+}
+@keyframes focus {
+	0% {
+		box-shadow: var(--shadow), 0 0 0 5px var(--focus-light);
+	}
+	50% {
+		box-shadow: var(--shadow), 0 0 0 5px var(--focus-dark);
+	}
+	100% {
+		box-shadow: var(--shadow), 0 0 0 5px var(--focus-light);
+	}
 }

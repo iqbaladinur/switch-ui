@@ -4,31 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Switch UI</title>
-  <link rel="stylesheet" href="./src//css/app.css">
-  <script src="./src/js/app.js"></script>
+  <link rel="stylesheet" href="./src/css/app.css">
+  <link rel="stylesheet" href="./src/css/utils.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="basic-white">
   <div class="container">
-    <div class="helper status-bar">
+    <div class="status-bar">
       <div class="profile">
-        <img src="#">
+        <a href="#">
+          <img src="./src/assets/profile.jpeg">
+        </a>
         <p class="user">
-          username
+          iamZelda
         </p>
       </div>
-      <div class="helper app-indicator">
-        <div class="helper">
-          icon
-        </div>
-        <div class="helper">
-          icon
-        </div>
-        <div class="helper">
-          icon
+      <div class="app-indicator">
+        <div class="app-container">
+          <div class="flex" id="clock">
+            <p class="m-auto"><span id="clockNumber">00:00</span> <span style="font-size: 1rem;" id="clockAmPm">AM</span></p>
+          </div>
+          <div class="wifi" style="padding-bottom: 2px;">
+            <svg width="33px" height="100%" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Icons" stroke="none" stroke-width="1">
+                    <g id="Rounded" transform="translate(-577.000000, -3702.000000)">
+                        <g id="Notification" transform="translate(100.000000, 3600.000000)">
+                            <g id="-Round-/-Notification-/-wifi" transform="translate(476.000000, 98.000000)">
+                                <g>
+                                    <path d="M2.06,10.06 C2.57,10.57 3.38,10.62 3.93,10.16 C8.6,6.32 15.38,6.32 20.06,10.15 C20.62,10.61 21.44,10.57 21.95,10.06 C22.54,9.47 22.5,8.49 21.85,7.96 C16.14,3.29 7.88,3.29 2.16,7.96 C1.51,8.48 1.46,9.46 2.06,10.06 Z M9.82,17.82 L11.29,19.29 C11.68,19.68 12.31,19.68 12.7,19.29 L14.17,17.82 C14.64,17.35 14.54,16.54 13.94,16.23 C12.72,15.6 11.26,15.6 10.03,16.23 C9.46,16.54 9.35,17.35 9.82,17.82 Z M6.09,14.09 C6.58,14.58 7.35,14.63 7.92,14.22 C10.36,12.49 13.64,12.49 16.08,14.22 C16.65,14.62 17.42,14.58 17.91,14.09 L17.92,14.08 C18.52,13.48 18.48,12.46 17.79,11.97 C14.35,9.48 9.66,9.48 6.21,11.97 C5.52,12.47 5.48,13.48 6.09,14.09 Z" id="🔹-Icon-Color"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </div>
+          <div class="battery">
+            <p>
+              26 <span style="font-size:1rem">%</span>
+            </p>
+            <div style="padding-top: 8px;">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" width="45px" height="45px" viewBox="0 0 92 92" enable-background="new 0 0 92 92" xml:space="preserve">
+                <path id="XMLID_1657_" d="M88,35h-3V24c0-2.2-1.7-4-4-4H4c-2.2,0-4,1.8-4,4v44c0,2.2,1.8,4,4,4h77c2.2,0,4-1.8,4-4V57h3
+                c2.2,0,4-1.4,4-3.6V38.6C92,36.4,90.2,35,88,35z M77,64H8V28h69v10.6v14.8V64z M29,54c0,2.2-1.8,4-4,4h-7c-2.2,0-4-1.8-4-4V38
+                c0-2.2,1.8-4,4-4h7c2.2,0,4,1.8,4,4V54z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="helper game-list">
+    <div class="game-list" id="gameList">
       <div class="helper game"></div>
       <div class="helper game"></div>
       <div class="helper game"></div>
@@ -44,8 +71,71 @@
       <div class="helper game"></div>
       <div class="game closing"></div>
     </div>
-    <div class="helper"></div>
-    <div class="helper"></div>
+    <div class="menu-container">
+      <div class="menu">
+        <button class="item">
+          <img src="./src/assets/news.svg" class="m-auto">
+          <p class="desc">
+            news
+          </p>
+        </button>
+        <button class="item">
+          <img src="./src/assets/eshop.svg" class="m-auto">
+          <p class="desc">
+            E-Shop
+          </p>
+        </button>
+        <button class="item">
+          <img src="./src/assets/gallery.svg" class="m-auto">
+          <p class="desc">
+            gallery
+          </p>
+        </button>
+        <button class="item">
+          <img src="./src/assets/controlls.svg" class="m-auto">
+          <p class="desc">
+            controller
+          </p>
+        </button>
+        <button class="item">
+          <img src="./src/assets/settings.svg" class="m-auto">
+          <p class="desc">
+            setting
+          </p>
+        </button>
+        <button class="item">
+          <img src="./src/assets/power.svg" class="m-auto">
+          <p class="desc">
+            power
+          </p>
+        </button>
+      </div>
+    </div>
+    <div style="padding: 0px 30px 0px 30px">
+      <hr>
+      <div class="footer">
+        <div class="status-mode">
+          <svg class="my-auto" width="69px" height="30px" viewBox="0 0 69 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+              <title>mode</title>
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1">
+                  <g id="mode">
+                      <path d="M65.5,10 C64.672,10 64,9.328 64,8.5 C64,7.672 64.672,7 65.5,7 C66.328,7 67,7.672 67,8.5 C67,9.328 66.328,10 65.5,10 L65.5,10 Z M62.5,21 C61.119,21 60,19.881 60,18.5 C60,17.119 61.119,16 62.5,16 C63.881,16 65,17.119 65,18.5 C65,19.881 63.881,21 62.5,21 L62.5,21 Z M58,8.5 C58,7.672 58.672,7 59.5,7 C60.328,7 61,7.672 61,8.5 C61,9.328 60.328,10 59.5,10 C58.672,10 58,9.328 58,8.5 L58,8.5 Z M14,26 L54,26 L54,4 L14,4 L14,26 Z M9.5,19 C8.672,19 8,18.328 8,17.5 C8,16.672 8.672,16 9.5,16 C10.328,16 11,16.672 11,17.5 C11,18.328 10.328,19 9.5,19 L9.5,19 Z M6.5,22 C5.672,22 5,21.328 5,20.5 C5,19.672 5.672,19 6.5,19 C7.328,19 8,19.672 8,20.5 C8,21.328 7.328,22 6.5,22 L6.5,22 Z M3.5,19 C2.672,19 2,18.328 2,17.5 C2,16.672 2.672,16 3.5,16 C4.328,16 5,16.672 5,17.5 C5,18.328 4.328,19 3.5,19 L3.5,19 Z M8,14.5 C8,15.328 7.328,16 6.5,16 C5.672,16 5,15.328 5,14.5 C5,13.672 5.672,13 6.5,13 C7.328,13 8,13.672 8,14.5 L8,14.5 Z M6.5,5 C7.881,5 9,6.119 9,7.5 C9,8.881 7.881,10 6.5,10 C5.119,10 4,8.881 4,7.5 C4,6.119 5.119,5 6.5,5 L6.5,5 Z M64,11.5 C64,12.328 63.328,13 62.5,13 C61.672,13 61,12.328 61,11.5 C61,10.672 61.672,10 62.5,10 C63.328,10 64,10.672 64,11.5 L64,11.5 Z M62.5,4 C63.328,4 64,4.672 64,5.5 C64,6.328 63.328,7 62.5,7 C61.672,7 61,6.328 61,5.5 C61,4.672 61.672,4 62.5,4 L62.5,4 Z M63,0 L6,0 C2.686,0 0,2.686 0,6 L0,24 C0,27.314 2.686,30 6,30 L63,30 C66.314,30 69,27.314 69,24 L69,6 C69,2.686 66.314,0 63,0 L63,0 Z" id="Page-1"></path>
+                  </g>
+              </g>
+          </svg>
+        </div>
+        <div class="information">
+          <div>
+            <button class="button-information">+</button> <span>Options</span>
+            <button class="button-information">A</button> <span>Start</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
+<script src="./src/js/app.js"></script>
 </html>
